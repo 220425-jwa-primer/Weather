@@ -7,20 +7,10 @@
     <title>Document</title>
     
     <style>@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap');
-    
-#back{
-  background: url("https://www.sciencenews.org/wp-content/uploads/2020/08/082920_aw_forecast_feat-1440x700.jpg")no-repeat;
-  overflow: hidden;
-  background-size:100%;
-  width: 100%;
-  min-height: 100vh;
-
-}
     body{
         /* changes the font and background color of the whole webpage **/
-        background-image: url('https://www.sciencenews.org/wp-content/uploads/2020/08/082920_aw_forecast_feat-1440x700.jpg');
+        background-color: "";
         font-family: 'Comfortaa', cursive;
-        background-size: 100%;
     }
     .wrapper{
         background-color: rgb(122, 163, 173);
@@ -62,21 +52,25 @@
     }
      </style>
 </head>
-<body id="back">
+<body>
     <div class="wrapper">
 <h1>Login</h1>
 <hr>
-<form>
+<form #login = "ngForm" (ngSubmit) = "onsubmit(login)">
 <div>
     <label for="">Email</label>
-    <input type="text"class="email"id="">
+    <input type="text"class="email"id="" #username="ngModel" ngModel name="username">
 </div>
 <div>
     <label for="">Password</label>
-    <input type="text"class="password"id="">
+    <input type="text"class="password"id="" #password="ngModel" ngModel name="password">
 </div>
 
     <input type="button" class="btn" type="Submit" value="Login">
+    <div *ngIf="showErrorMessage">
+        <small class="text-danger">Incorrect login Please try again</small>
+      </div>
+
 </form>
 
     </div>

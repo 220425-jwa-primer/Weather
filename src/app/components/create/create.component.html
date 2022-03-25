@@ -55,25 +55,25 @@
     <div class="wrapper">
 <h1>Create your Free Account</h1>
 <hr>
-<form>
+<form #create = "ngForm" (ngSubmit) = "onsubmit(create)">
 <div>
     <label for="">Email</label>
-    <input type="text"class="email"id="">
+    <input class="input-group" type="text"class="email"id="" #username="ngModel" ngModel name="username">
 </div>
 <div>
     <label for="">Password</label>
-    <input type="text"class="password"id="">
-</div>
-<div>
-    <label for="">City</label>
-    <input type="text"class=""id="">
+    <input class="input-group" type="text"class="password"id="" #password="ngModel" ngModel name="password">
 </div>
 
 <div>
     <label for="">Zipcode</label>
-    <input type="text"class="password"id="zipcode">
+    <input class="input-group" type="text"class="password"id="zipcode" #zipcode="ngModel" ngModel name="zipcode">
 </div>
     <input type="button" class="btn" type="Submit" value="Create">
+    <div *ngIf="showErrorMessage">
+        <small class="text-danger">Username already exists Please try again</small>
+      </div>
+    
 </form>
 
     </div>

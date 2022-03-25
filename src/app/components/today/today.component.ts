@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { switchMap } from 'rxjs';
-import { GetcoordService } from '../services/getcoord.service';
 import {DataService} from 'src/app/services/data.service';
+import { GetcoordService } from 'src/app/services/getcoord.service';
 @Component({
   selector: 'app-today',
   templateUrl: './today.component.html',

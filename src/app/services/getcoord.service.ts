@@ -8,8 +8,17 @@ import { Observable } from 'rxjs';
 export class GetcoordService {
 
   constructor(private http:HttpClient) { }
+  
+  getzip() {
+    if(localStorage.getItem("zipcode")) {
+      return localStorage.getItem("zipcode")
+    }
+    else {
+      return "20001"
+    }
+  }
 
-  zipnum:number = 75025
+  zipnum:any = this.getzip()
 
   getzipnum(zip:number) {
     this.zipnum = zip

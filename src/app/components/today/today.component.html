@@ -1,3 +1,4 @@
+<<<<<<< HEAD:src/app/today/today.component.html
 <!--
 <body class="" style="background-image: url('https://www.sciencenews.org/wp-content/uploads/2020/08/082920_aw_forecast_feat-1440x700.jpg')"> 
 <div class="container">
@@ -33,6 +34,20 @@ div{
     }
 
 </style>
+=======
+<h1 style="text-align:center">{{city}}</h1>
+                  <div *ngFor="let todays of today" data-spy="scroll" data-target="#list-example" data-offset="0" class="scrollspy-example">
+                    <h4 class="text-center">Hourly Forecast</h4>
+                    <p class="text-center" id="list-item-1">Time & Date: {{todays.dt | timeConverter}}</p>
+                    <img class="rounded mx-auto d-block" src="http://openweathermap.org/img/wn/{{todays.weather[0].icon}}@2x.png">
+                    <p class="text-center" id="list-item-2">Sky Forecast: {{todays.weather[0].main}}</p>
+                    <p class="text-center" id="list-item-3">Sky Description: {{todays.weather[0].description}}</p>
+                    <p class="text-center" id="list-item-4">Temperature in Fahrenheit: {{todays.temp}}</p>
+                    <p class="text-center" id="list-item-4">What it feels like in Fahrenheit: {{todays.feels_like}}</p>
+                  </div>
+                  
+                
+>>>>>>> 79d55964614b0388cd804b7a307801631ee5c4cb:src/app/components/today/today.component.html
 
 
 <div id="back">
