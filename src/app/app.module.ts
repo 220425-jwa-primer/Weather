@@ -14,7 +14,7 @@ import { HistoricalComponent } from './components/historical/historical.componen
 import { SubmitzipComponent } from './components/submitzip/submitzip.component';
 import { SigninComponent } from './signin/signin.component';
 import { CreateComponent } from './create/create.component';
-
+import { DegreeconverterPipe } from './pipes/degreeconverter.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +28,8 @@ import { CreateComponent } from './create/create.component';
     NavbarComponent,
     SubmitzipComponent,
     SigninComponent,
-    CreateComponent
+    CreateComponent,
+    DegreeconverterPipe
   ],
   imports: [
     BrowserModule,

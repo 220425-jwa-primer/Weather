@@ -1,12 +1,19 @@
-
-
-<div>
+<style>
+.back {
+    background: url("https://www.sciencenews.org/wp-content/uploads/2020/08/082920_aw_forecast_feat-1440x700.jpg") no-repeat;
+    overflow: hidden;
+    background-size: contain;
+    width: 100%;
+    min-height: 100vh;
+  }
+</style>
+<body class="back">
   <div class="">
         <div *ngFor="let messages of message">
-            <div class="card">
+            <div class="card" class="back">
                 <div class="card-text">
-                    <h5 class="card-body">Todays Alert is a {{messages.event}}</h5>
-                    <p class="card-body">{{messages.description}}</p>
+                    <h1 style="color:white" class="card-body text-center">Todays Warning is a {{messages.event}}</h1>
+                    <h5 style="color:hsl(0, 0%, 100%)" class="card-body">{{messages.description}}</h5>
                 </div>
 
 
@@ -17,4 +24,4 @@
         </div>
 
     </div>
-  </div>
+  </body>

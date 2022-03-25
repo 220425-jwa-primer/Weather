@@ -1,64 +1,71 @@
-<h1 style="text-align:center">{{city}}</h1>
-  <div class="row">
-    <div class="col-lg-2">
-      <div class="card" style="width: 20rem;">
-          <div class="card-header" style="text-align: center;"><h1>{{r5.dt | datepipe}}</h1></div>
-          <img src="http://openweathermap.org/img/wn/{{r5.weather[0].icon}}@2x.png" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">{{r5.weather[0].description}}</h5>
-            <p class="card-text">Feels like {{r5.feels_like}}</p>
-            <p class="card-text">Max temp: {{r5.temp}}</p>
-            <p class="card-text">min temp: </p>
+
+        <style>
+       #back {
+  background: url("https://www.sciencenews.org/wp-content/uploads/2020/08/082920_aw_forecast_feat-1440x700.jpg") no-repeat;
+  overflow: hidden;
+  background-size: cover;
+  width: 100%;
+  min-height: 100vh;
+}
+h1,h5{
+  /* changes the font and background color of the whole webpage **/
+  font-family: 'Comfortaa', cursive;
+}
+p{
+  font-family: 'Comfortaa', cursive;
+  font-size: 12px;
+}
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap');
+</style>
+        <div id="back" >
+    <h1 class="body" style="text-align:center; color:white;">{{city}}</h1>
+        <div class="card-group" style="height:max-content">
+          <div class="card" style="width : 20rem;">
+            <div class="card-header" style="text-align: center;"><h1>{{r5.dt | datepipe}}</h1></div>
+            <img src="http://openweathermap.org/img/wn/{{r5.weather[0].icon}}@2x.png" class="card-img-top" alt="...">
+            <div class="format" class="card-body">
+              <h5 class="card-title">{{r5.weather[0].description | titlecase}}</h5>
+            <p class="card-text">Felt like {{r5.feels_like | degreeconverter}} degrees</p>
+            <p class="card-text">Actual Temperature was {{r5.temp | degreeconverter }} degrees</p>
+            </div>
           </div>
-        </div>
-      </div>
-      <div class="col-lg-2">
-        <div class="card" style="width: 20rem;">
+          <div class="card" style="width : 20rem;">
             <div class="card-header" style="text-align: center;"><h1>{{r4.dt | datepipe}}</h1></div>
             <img src="http://openweathermap.org/img/wn/{{r4.weather[0].icon}}@2x.png" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">{{r4.weather[0].description}}</h5>
-              <p class="card-text">Feels like {{r4.feels_like}}</p>
-              <p class="card-text">Max temp: {{r4.temp}}</p>
-              <p class="card-text">min temp: </p>
+            <div class="format" class="card-body">
+              <h5 class="card-title">{{r4.weather[0].description |titlecase}}</h5>
+            <p class="card-text">Felt like {{r4.feels_like | degreeconverter}} degrees</p>
+            <p class="card-text">Actual Temperature was {{r4.temp | degreeconverter}} degrees</p>
             </div>
           </div>
-        </div>
-        <div class="col-lg-2">
-          <div class="card" style="width: 20rem;">
-              <div class="card-header" style="text-align: center;"><h1>{{r3.dt | datepipe}}</h1></div>
-              <img src="http://openweathermap.org/img/wn/{{r3.weather[0].icon}}@2x.png" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">{{r3.weather[0].description}}</h5>
-                <p class="card-text">Feels like {{r3.feels_like}}</p>
-                <p class="card-text">Max temp: {{r3.temp}}</p>
-                <p class="card-text">min temp: </p>
-              </div>
+          <div class="card" style="width : 20rem;">
+            <div class="card-header" style="text-align: center;"><h1>{{r3.dt | datepipe}}</h1></div>
+            <img src="http://openweathermap.org/img/wn/{{r3.weather[0].icon}}@2x.png" class="card-img-top" alt="...">
+            <div class="format" class="card-body">
+              <h5 class="card-title">{{r3.weather[0].description | titlecase}}</h5>
+            <p class="card-text">Felt like {{r3.feels_like | degreeconverter}} degrees</p>
+            <p class="card-text">Actual Temperature was {{r3.temp | degreeconverter }} degrees</p>
             </div>
           </div>
-          <div class="col-lg-2">
-            <div class="card" style="width: 20rem;">
-                <div class="card-header" style="text-align: center;"><h1>{{r2.dt | datepipe}}</h1></div>
-                <img src="http://openweathermap.org/img/wn/{{r2.weather[0].icon}}@2x.png" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">{{r2.weather[0].description}}</h5>
-                  <p class="card-text">Feels like {{r2.feels_like}}</p>
-                  <p class="card-text">Max temp: {{r2.temp}}</p>
-                  <p class="card-text">min temp: </p>
-                </div>
-              </div>
+          <div class="card" style="width : 20rem;">
+            <div class="card-header" style="text-align: center;"><h1>{{r2.dt | datepipe}}</h1></div>
+            <img src="http://openweathermap.org/img/wn/{{r2.weather[0].icon}}@2x.png" class="card-img-top" alt="...">
+            <div class="format" class="card-body">
+              <h5 class="card-title">{{r2.weather[0].description | titlecase}} </h5>
+            <p class="card-text">Felt like {{r2.feels_like | degreeconverter}} degrees</p>
+            <p class="card-text">Actual Temperature was {{r2.temp | degreeconverter }} degrees</p>
             </div>
-            <div class="col-lg-2">
-              <div class="card" style="width: 20rem;">
-                  <div class="card-header" style="text-align: center;"><h1>{{r1.dt | datepipe}}</h1></div>
-                  <img src="http://openweathermap.org/img/wn/{{r1.weather[0].icon}}@2x.png" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">{{r1.weather[0].description}}</h5>
-                    <p class="card-text">Feels like {{r1.feels_like}}</p>
-                    <p class="card-text">Max temp: {{r1.temp}}</p>
-                    <p class="card-text">min temp: </p>
-                  </div>
-                </div>
-              </div>
+          </div>
+          <div class="card" style="width : 20rem;">
+            <div class="card-header" style="text-align: center;"><h1>{{r1.dt | datepipe}}</h1></div>
+            <img src="http://openweathermap.org/img/wn/{{r1.weather[0].icon}}@2x.png" class="card-img-top" alt="...">
+            <div class="format" class="card-body">
+              <h5 class="card-title">{{r1.weather[0].description | titlecase}} </h5>
+            <p class="card-text">Felt like {{r1.feels_like | degreeconverter}} degrees</p>
+            <p class="card-text">Actual Temperature was {{r1.temp | degreeconverter }} degrees</p>
             </div>
+          </div>
           
+        </div>
+      </div>
+    

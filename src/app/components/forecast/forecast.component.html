@@ -1,17 +1,30 @@
-<h1 style="text-align:center">{{city}}</h1>
+<style>
+body{
+  /* changes the font and background color of the whole webpage **/
+  font-family: 'Comfortaa', cursive;
+}
+#format{
+  font-family: 'Comfortaa', cursive;
+  font-size: 12px;
+}
+</style>
+
+<body class="" style="background-image: url('https://www.sciencenews.org/wp-content/uploads/2020/08/082920_aw_forecast_feat-1440x700.jpg')"> 
+<h1 style="text-align:center; color:white">{{city}}</h1>
 <div class="container">
   <div class="row no-gutters">
     <div class="col-md-3 padding-0" *ngFor="let daily1 of daily; let i=index">
       <div class="card" style="width: 20rem;">
         <div class="card-header" style="text-align: center;"><h1>{{daily1.dt | datepipe}}</h1></div>
         <img src="http://openweathermap.org/img/wn/{{daily1.weather[0].icon}}@2x.png" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">{{daily1.weather[0].description}}</h5>
-          <p class="card-text">Feels like {{daily1.feels_like.day}}</p>
-          <p class="card-text">Max temp: {{daily1.temp.max}}</p>
-          <p class="card-text">min temp: {{daily1.temp.min}}</p>
+        <div id="format" class="card-body">
+          <h5 class="card-title">{{daily1.weather[0].description  | titlecase}}</h5>
+          <p class="card-text">The Temperature is {{daily1.feels_like.day}} degrees</p>
+          <p class="card-text">Max temp: {{daily1.temp.max}} degrees</p>
+          <p class="card-text">Min temp: {{daily1.temp.min}} degrees</p>
         </div>
       </div>
     </div>
   </div>
 </div>
+</body>

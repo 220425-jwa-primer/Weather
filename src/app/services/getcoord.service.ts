@@ -16,7 +16,7 @@ export class GetcoordService {
   }
 
   getlocation():Observable<any> {
-    return this.http.get<any>(`http://api.openweathermap.org/geo/1.0/zip?zip=${this.zipnum},us&appid=912a4ddecbe3395a54af628f0a6b7b6e
+    return this.http.get<any>(`http://api.openweathermap.org/geo/1.0/zip?zip=${this.zipnum},us&appid=93c9227aceb12421211cb7e287943d9b
     `)
   }
 
