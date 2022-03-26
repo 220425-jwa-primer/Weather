@@ -1,27 +1,53 @@
-# WeatherApp2
+# Weather app
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.5.
+## Project Description
 
-## Development server
+We built a weather forecasting app using the API. The data service takes in the zipcode and uses the geocoding API to return the latitude/longitude coordinates, which are then piped as parameters into the one-call API. Anyone can enter their zipcode in the search bar and get the location name, historical 5 day data, 7 day forecast, alerts, and hourly trends. There is also the option to create an account with and permanently assign a zipcode to the user. Once logged in, the user can change their zipcode and it will update in the database. The navbar uses an ng-template to display a log out or login depending on the session. All the data is stored locally on the client’s browser. 
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Technologies Used
 
-## Code scaffolding
+* Angular - version 10
+* Bootstrap - 4.6
+* SpringBoot
+* MySQL
+* HTML
+* JS
+* CSS
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Features
 
-## Build
+List of features ready and TODOs for future development
+* Can input a zip code and see the data for any location
+* View past weather information as well as future anywhere
+* Can create an account and have access permanently
+* Can view emergency alerts and hourly forecast
+* The app takes into account time and shows the weather at night or day depending on when the website is accessed
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+To-do list:
+* Some zipcodes do not exist- maybe find a way to filter those
+* Currently the app is for US only. Maybe make it global in the future
+* Add more weather related information and an option to include more APIs to improve accuracy
 
-## Running unit tests
+## Getting Started
+   
+(include git clone command)
+(include all environment setup steps)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+> Be sure to include BOTH Windows and Unix command  
+> Be sure to mention if the commands only work on a specific platform (eg. AWS, GCP)
 
-## Running end-to-end tests
+* After cloning, be sure to add the required node modules and install boostrap 4.6
+* For the spring boot part of it, set up your application properties configuration file according to your local system/database
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Usage
 
-## Further help
+* To find weather forecasts and information for any location in the U.S.
+* To view any emergency alerts in your area
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Contributors
+
+Antonio Lewis & Nikhil Pradeep
+
+## License
+
+This project uses the following license: [MIT license](LICENSE).
