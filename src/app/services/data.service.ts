@@ -17,7 +17,7 @@ export class DataService {
 
   
   getWeatherData(lat:any, long:any): Observable<any> {
-    return this.http.get<any>(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&units=imperial&exclude=minutely,current&appid=912a4ddecbe3395a54af628f0a6b7b6e`)
+    return this.http.get<any>(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&units=imperial&exclude=minutely,current&appid=93c9227aceb12421211cb7e287943d9b`)
 
   }
 
