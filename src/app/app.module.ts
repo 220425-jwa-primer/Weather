@@ -16,6 +16,7 @@ import { DegreeconverterPipe } from './pipes/degreeconverter.pipe';
 import { SigninComponent } from './components/signin/signin.component';
 import { CreateComponent } from './components/create/create.component';
 import { UpdatezipComponent } from './components/updatezip/updatezip.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { UpdatezipComponent } from './components/updatezip/updatezip.component';
     SigninComponent,
     CreateComponent,
     DegreeconverterPipe,
-    UpdatezipComponent
+    UpdatezipComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

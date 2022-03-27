@@ -1,27 +1,38 @@
 <style>
-.back {
-    background: url("https://www.sciencenews.org/wp-content/uploads/2020/08/082920_aw_forecast_feat-1440x700.jpg") no-repeat;
-    overflow: hidden;
-    background-size: cover;
-    width: 100%;
-    min-height: 100vh;
-  }
+body{
+  background: url("https://www.sciencenews.org/wp-content/uploads/2020/08/082920_aw_forecast_feat-1440x700.jpg");
+  overflow: hidden;
+  background-size:cover;
+  width: 100%;
+  min-height: 100vh;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap');
+div h1 h5{
+        /* changes the font and background color of the whole webpage **/
+        font-family: 'Comfortaa', normal;
+}
 </style>
-<body class="back">
-  <div class="">
-        <div *ngFor="let messages of message">
-            <div class="card" class="back">
-                <div class="card-text">
-                    <h1 style="color:white" class="card-body text-center">Todays Warning is a {{messages.event}}</h1>
-                    <h5 style="color:hsl(0, 0%, 100%)" class="card-body">{{messages.description}}</h5>
-                </div>
 
 
 
-            </div>
 
+<body>
+  <h1 style="text-align:center; font-family: 'Comfortaa', normal; color: white;">{{city}}</h1>
+  <div class="container" >
+    <div class="row no-gutters">
+      <div class="col-md-1 padding-0" *ngFor="let messages of message; let i=index">
+        <div class="card text-dark bg-info mb-3" style="width: 70rem;">
+          <div class="card-body">
+            <h2 style="text-align:center; font-family:'Comfortaa', normal ;" class="card-title">Todays Warning is a {{messages.event}}</h2>
+            <p style="font-family: 'Comfortaa', normal ;" class="card-text">{{messages.description}} </p>
 
+          </div>
         </div>
-
+      </div>
     </div>
-  </body>
+  </div>
+</body>
+
+
+

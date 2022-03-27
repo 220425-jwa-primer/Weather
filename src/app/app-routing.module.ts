@@ -7,6 +7,7 @@ import { HistoricalComponent } from './components/historical/historical.componen
 import { SigninComponent} from './components/signin/signin.component';
 import { CreateComponent } from './components/create/create.component';
 import { UpdatezipComponent } from './components/updatezip/updatezip.component';
+import { HomeComponent } from './components/home/home.component';
 const routes: Routes = [
   {path:'today', component: TodayComponent},
   {path:'alerts', component: AlertsComponent},
@@ -14,7 +15,8 @@ const routes: Routes = [
   {path: 'historical', component: HistoricalComponent},
   {path: 'signin', component: SigninComponent},
   {path: 'create', component: CreateComponent},
-  {path: 'updatezip', component: UpdatezipComponent}
+  {path: 'updatezip', component: UpdatezipComponent},
+  {path: '', component: HomeComponent}
 ];
 
 @NgModule({
