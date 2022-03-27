@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TodayComponent } from './components/today/today.component';
-import { AlertsComponent } from './alerts/alerts.component';
+import { AlertsComponent } from './components/alerts/alerts.component';
 import { ForecastComponent } from './components/forecast/forecast.component';
 import { HistoricalComponent } from './components/historical/historical.component';
 import { SigninComponent} from './components/signin/signin.component';

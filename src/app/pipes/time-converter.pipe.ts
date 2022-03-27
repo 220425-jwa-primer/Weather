@@ -7,9 +7,10 @@ export class TimeConverterPipe implements PipeTransform {
 
   transform(value: number): String {
     var result = value*1000;
-    const date = new Date(result);
-   const time =  Math.round(date.getTime() / 1000).toString()
-    return date.toLocaleString();
+    let date = new Date(result);
+    let res = (date.getMonth()+1).toString() + "/" + date.getDate()
+    let time =  date.toLocaleTimeString()
+    return `${res}, ${time}`;
   }
 
 }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { DataService } from '../services/data.service';
-import { GetcoordService } from '../services/getcoord.service';
+import { DataService } from '../../services/data.service';
+import { GetcoordService } from '../../services/getcoord.service';
 import { switchMap } from 'rxjs';
 @Component({
   selector: 'app-alerts',

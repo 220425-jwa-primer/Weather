@@ -16,18 +16,18 @@
 
 
 <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: grey;">
-    <a class="navbar-brand" routerLink="/forecast" >Weather-App</a>
+    <a class="navbar-brand" routerLink="/" >Weather-App</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav nav-fill">
-        <li class="nav-link">
-          <a class="nav-link active" routerLink="/forecast">Home</a>
-        </li>
         <li class="nav-link active">
           <a routerLink="/today"  class="nav-link" >Today </a>
+        </li>
+        <li class="nav-link">
+          <a class="nav-link active" routerLink="/forecast">Forecast</a>
         </li>
         <li class="nav-link active">
           <a class="nav-link" routerLink="/historical">Historical Data</a>
@@ -38,11 +38,17 @@
       </ul>
     </div>
       <form class="form-inline my-2 my-lg-0 " #zipform="ngForm" (ngSubmit)="onsubmit(zipform)">
-        <input class="form-control mr-sm-2" ngModel type="text" name="zipcode" #zipcode="ngModel" required [class.is-invalid]="zipcode.invalid && zipcode.touched" pattern="(^\d{5}$)|(^\d{5}-\d{4}$)" placeholder="Search" aria-label="Search">
+        <div class="form-group-row">
+          <div class="col-sm-7">
+            <input class="form-control mr-sm-2" ngModel type="text" name="zipcode" #zipcode="ngModel" required [class.is-invalid]="zipcode.invalid && zipcode.touched" pattern="(^\d{5}$)|(^\d{5}-\d{4}$)" placeholder="Search" aria-label="Search">
+          </div>
+          <div class="col-sm-12">
+            <div *ngIf="zipcode.errors && (zipcode.invalid || zipcode.touched)">
+              <small style="text-align: bottom;" class="text-danger" *ngIf="zipcode.errors['pattern']">Not a valid 5 digit zipcode</small>
+            </div>
+          </div>
+        </div>
         <button style="color:rgb(69, 201, 69); border-color: rgb(69, 201, 69);" class="btn btn-outline-success my-2 my-sm-0" [disabled]="zipform.invalid" type="submit">Enter Zipcode</button>
-        <div *ngIf="zipcode.errors && (zipcode.invalid || zipcode.touched)">
-          <small style="text-align: bottom;" class="text-danger" *ngIf="zipcode.errors['pattern']">Not a valid 5 digit zipcode</small>
-      </div>
       <div *ngIf='(status == null); else elseBlock'>
         <button style="color:white" type="button" routerLink="/signin" class="btn btn-link"  >Sign in</button>
         <button style="color:white" type="button" routerLink="/create" class="btn btn-link" >Create an Account</button> 

@@ -13,8 +13,34 @@ div{
         font-family: 'Comfortaa', normal;
     }
 
+.table-responsive {
+  max-height:690px;
+  }
+
 
 </style>
+
+
+
+
+<body class="" id="back"> 
+  <h1 style="text-align:center; color:white">{{city}}</h1>
+  <div class="container">
+    <div class="table-responsive">
+      <table class="table table-dark">
+        <tbody>
+          <tr *ngFor="let todays of today" >
+            <th scope="row">{{todays.dt | timeConverter}}</th>
+            <td> <img src="http://openweathermap.org/img/wn/{{todays.weather[0].icon}}@2x.png"></td>
+            <td>{{todays.weather[0].description | titlecase}}</td>
+            <td>The Actual Temperature <br> is {{todays.temp}} degrees</td>
+            <td>Feels like: {{todays.feels_like}} degrees</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
 
 
 <!--   div id="back">
@@ -37,9 +63,9 @@ div{
 
 </div>
 </div>
-</div>-->
 
-<body class="" style="background-image: url('https://www.sciencenews.org/wp-content/uploads/2020/08/082920_aw_forecast_feat-1440x700.jpg')"> 
+
+ <body class="" style="background-image: url('https://www.sciencenews.org/wp-content/uploads/2020/08/082920_aw_forecast_feat-1440x700.jpg')"> 
   <h1 style="text-align:center; color:white">{{city}}</h1>
   <div class="container">
     <div class="row no-gutters">
@@ -58,4 +84,4 @@ div{
       </div>
     </div>
   </div>
-  </body>
+  </body></div>-->
