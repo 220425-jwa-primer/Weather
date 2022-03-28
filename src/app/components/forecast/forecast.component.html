@@ -14,7 +14,7 @@ body{
 <div class="container">
   <div class="row no-gutters">
     <div class="col-md-3 padding-0" *ngFor="let daily1 of daily; let i=index">
-      <div class="card" style="width: 20rem;">
+      <div class="card text-white bg-dark card border-info" style="width: 19rem;">
         <div class="card-header" style="text-align: center;"><h1>{{daily1.dt | datepipe}}</h1></div>
         <img src="http://openweathermap.org/img/wn/{{daily1.weather[0].icon}}@2x.png" class="card-img-top" alt="...">
         <div id="format" class="card-body">

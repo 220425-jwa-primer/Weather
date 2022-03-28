@@ -34,6 +34,8 @@
         margin-top: 100px;
         border-radius: 25px;
         box-shadow: 12px 10px 12px rgb(1, 0, 0);
+        overflow-y:hidden;
+        height: 1%;
 
     }
 
@@ -49,8 +51,7 @@
     .btn{
         /* changes the style of the buttton **/
         width: 95%;
-        height: 30px;
-        padding: 5px;
+        padding: 10px;
         margin: 0 auto;
         display: block;
         background-color: silver;
@@ -75,10 +76,12 @@
 <form #updatezip = "ngForm" (ngSubmit) = "onsubmit(updatezip)">
 <div>
     <label for="">Zipcode:</label>
-    <input type="text"class="email"id="" #zipcode="ngModel" ngModel name="zipcode">
+    <input class="form-control" type="text" id="" #zipcode="ngModel" ngModel name="zipcode" required [class.is-invalid]="zipcode.invalid && zipcode.touched" pattern="(^\d{5}$)|(^\d{5}-\d{4}$)">
 </div>
-
-    <input type="button" class="btn" type="Submit" value="Update">
+<div *ngIf="zipcode.errors && (zipcode.invalid || zipcode.touched)">
+    <small style="text-align: bottom;" class="text-danger" *ngIf="zipcode.errors['pattern']">Not a valid 5 digit zipcode</small>
+</div>
+    <input type="button" class="btn" type="Submit" value="Update" [disabled]="updatezip.invalid">
 
 </form>
 
